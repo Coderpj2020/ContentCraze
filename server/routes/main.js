@@ -9,8 +9,8 @@ const Post = require('../models/Post');
 router.get('', async (req, res) => {
   try {
     const locals = {
-      title: "NodeJs Blog",
-      description: "Simple Blog created with NodeJs, Express & MongoDb."
+      title: "ContentCraze Home",
+      description: "Created with NodeJs, Express & MongoDb."
     }
 
     let perPage = 10;
@@ -21,8 +21,7 @@ router.get('', async (req, res) => {
     .limit(perPage)
     .exec();
 
-    // Count is deprecated - please use countDocuments
-    // const count = await Post.count();
+    
     const count = await Post.countDocuments({});
     const nextPage = parseInt(page) + 1;
     const hasNextPage = nextPage <= Math.ceil(count / perPage);
@@ -43,7 +42,7 @@ router.get('', async (req, res) => {
 
 // router.get('', async (req, res) => {
 //   const locals = {
-//     title: "NodeJs Blog",
+//     title: "ContentCraze",
 //     description: "Simple Blog created with NodeJs, Express & MongoDb."
 //   }
 
@@ -69,7 +68,7 @@ router.get('/post/:id', async (req, res) => {
 
     const locals = {
       title: data.title,
-      description: "Simple Blog created with NodeJs, Express & MongoDb.",
+      description: "ContentCraze created with NodeJs, Express & MongoDb.",
     }
 
     res.render('post', { 
@@ -91,8 +90,8 @@ router.get('/post/:id', async (req, res) => {
 router.post('/search', async (req, res) => {
   try {
     const locals = {
-      title: "Seach",
-      description: "Simple Blog created with NodeJs, Express & MongoDb."
+      title: "Search",
+      description: "ContentCraze created with NodeJs, Express & MongoDb."
     }
 
     let searchTerm = req.body.searchTerm;

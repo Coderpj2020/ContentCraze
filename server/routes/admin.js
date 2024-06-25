@@ -38,7 +38,7 @@ router.get('/admin', async (req, res) => {
   try {
     const locals = {
       title: "Admin",
-      description: "Simple Blog created with NodeJs, Express & MongoDb."
+      description: "ContentCraze created with  Express.js, Ejs & MongoDb."
     }
 
     res.render('admin/index', { locals, layout: adminLayout });
@@ -86,7 +86,7 @@ router.get('/dashboard', authMiddleware, async (req, res) => {
   try {
     const locals = {
       title: 'Dashboard',
-      description: 'Simple Blog created with NodeJs, Express & MongoDb.'
+      description: 'ContentCraze created with express.js, ejs and MongoDb.'
     }
 
     const data = await Post.find();
@@ -111,7 +111,7 @@ router.get('/add-post', authMiddleware, async (req, res) => {
   try {
     const locals = {
       title: 'Add Post',
-      description: 'Simple Blog created with NodeJs, Express & MongoDb.'
+      description: 'ContentCraze created with NodeJs, Express & MongoDb.'
     }
 
     const data = await Post.find();

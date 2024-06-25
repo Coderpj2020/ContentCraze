@@ -28,7 +28,7 @@ app.use(session({
   store: MongoStore.create({
     mongoUrl: process.env.MONGODB_URI
   }),
-  //cookie: { maxAge: new Date ( Date.now() + (3600000) ) } 
+
 }));
 
 app.use(express.static('public'));
@@ -39,7 +39,7 @@ app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
 
-app.locals.isActiveRoute = isActiveRoute; 
+app.locals.isActiveRoute = isActiveRoute;
 
 
 app.use('/', require('./server/routes/main'));
